@@ -117,7 +117,7 @@ define bamboo_agent::agent(
 
   bamboo_agent::agent_cfg { $id:
     home          => $home,
-    Name          => $name,
+    name          => $name,
     description   => $description,
   }
 
