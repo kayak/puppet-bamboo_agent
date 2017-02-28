@@ -52,6 +52,7 @@ define bamboo_agent::agent(
   $expand_id_macros        = true,
   $private_tmp_dir         = false,
   $refresh_service         = false,
+  $description             = undef,
 ){
 
   validate_hash($wrapper_conf_properties)
