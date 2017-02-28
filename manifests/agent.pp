@@ -115,6 +115,12 @@ define bamboo_agent::agent(
     require    => $install,
   }
 
+  bamboo_agent::agent_cfg { $id:
+    home          => $home,
+    Name          => $name,
+    description   => $description,
+  }
+
   if $refresh_service {
     Bamboo_Agent::Wrapper_Conf[$id] ~> Bamboo_Agent::Service[$id]
   }
