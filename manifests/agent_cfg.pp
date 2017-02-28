@@ -11,12 +11,12 @@ define bamboo_agent::agent_cfg(
     owner => $bamboo_agent::user_name,
     group => $bamboo_agent::user_group,
   } ->
-  file_line { 'Update name field $path':
+  file_line { "Update name field $path":
     path    => $path,
     line    => "<name>$title</name>",
     match   => "^<name>.*?$"
   } ->
-  file_line { 'Update description field $path':
+  file_line { "Update description field $path":
   path    => $path,
   line    => "<description>$name</description>",
   match   => "^<description>.*?$"
