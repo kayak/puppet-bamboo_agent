@@ -2,7 +2,6 @@
 # *** This type should be considered private to this module ***
 define bamboo_agent::agent_cfg(
   $home         = $title,
-  $name         = $name,
   $description  = $description ,
 ){
 
@@ -12,9 +11,9 @@ define bamboo_agent::agent_cfg(
     owner => $bamboo_agent::user_name,
     group => $bamboo_agent::user_group,
   } ->
-  file_line { 'Upate name field':
+  file_line { 'Update name field':
     path    => $path,
-    line    => "<name>$name</name>",
+    line    => "<name>$title</name>",
     match   => "^<name>.*?$"
   } ->
   file_line { 'Update description field':
