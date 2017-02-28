@@ -117,7 +117,6 @@ define bamboo_agent::agent(
 
   bamboo_agent::agent_cfg { $id:
     home          => $home,
-    name          => $id,
     description   => $description,
     before        => Bamboo_Agent::Service[$id],
     require       => $install,
