@@ -26,6 +26,9 @@
 # [refresh_service] Whether to restart the agent after a change to
 #   bamboo-capabilities.properties or wrapper.conf.
 #
+# [description] The description of the agent to place into the
+# bamboo-agent.cfg.xml file. Defaults to the id of the agent.
+#
 # === Examples
 #
 # Suppose an agent on the node "somehost" is defined with the
@@ -38,6 +41,7 @@
 #     'agentkey' => "${::hostname}-!ID!",
 #   },
 #   expand_id_macros => true,
+#   description => 'Bamboo Remote Agent',
 # }
 #
 # The agent would have the custom capability "agentkey" set to
@@ -52,7 +56,7 @@ define bamboo_agent::agent(
   $expand_id_macros        = true,
   $private_tmp_dir         = false,
   $refresh_service         = false,
-  $description             = undef,
+  $description             = $title,
 ){
 
   validate_hash($wrapper_conf_properties)
