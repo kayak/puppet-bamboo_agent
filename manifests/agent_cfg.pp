@@ -18,7 +18,7 @@ define bamboo_agent::agent_cfg(
   } ->
   file_line { "Update description field $path":
   path    => $path,
-  line    => "<description>$name</description>",
+  line    => "<description>$description</description>",
   match   => "^<description>.*?$"
   }
 }
