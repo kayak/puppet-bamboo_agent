@@ -1,4 +1,4 @@
-# Set name and description with the bamboo agent c
+# Set name and description within the bamboo agent
 # configuration file.
 # *** This type should be considered private to this module ***
 define bamboo_agent::agent_cfg(
