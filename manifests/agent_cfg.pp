@@ -1,4 +1,5 @@
-# Set individual property values in wrapper.conf
+# Set name and description with the bamboo agent c
+# configuration file.
 # *** This type should be considered private to this module ***
 define bamboo_agent::agent_cfg(
   $home         = $title,
@@ -17,8 +18,8 @@ define bamboo_agent::agent_cfg(
     match   => "^<name>.*?$"
   } ->
   file_line { "Update description field $path":
-  path    => $path,
-  line    => "<description>$description</description>",
-  match   => "^<description>.*?$"
+    path    => $path,
+    line    => "<description>$description</description>",
+    match   => "^<description>.*?$"
   }
 }
