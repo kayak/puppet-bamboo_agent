@@ -1,4 +1,12 @@
 #!/bin/bash
+### BEGIN INIT INFO
+# Provides:          bamboo-agent<%= @agent_id.to_s.ljust(4) %>
+# Required-Start:    $all
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Init script for running bamboo agent
+### END INIT INFO
 # bamboo-agent<%= @agent_id.to_s.ljust(4) %> Init script for running bamboo agent
 #
 # chkconfig:       2345 98 02
